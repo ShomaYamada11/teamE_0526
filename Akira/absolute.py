@@ -1,7 +1,6 @@
 import sys
-
-
 args = sys.argv
+
 # 引数をintに変換してリスのに格納
 num =int(args[1])
 

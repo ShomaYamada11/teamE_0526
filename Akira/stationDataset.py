@@ -1,7 +1,7 @@
 from database import session
 from distancedb import Station
 
-
+# データの入力
 station = Station(
     seq = 1,
     name = "東京",
