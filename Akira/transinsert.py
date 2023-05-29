@@ -7,6 +7,7 @@ from datetime import date,datetime
 
 
 
+# テーブル名とカラムの要素を定義
 class Transport(Base):
     __tablename__='transport'
     date = Column('date',Date)
@@ -21,23 +22,19 @@ def main(args):
     Base.metadata.create_all(bind = ENGINE)
     
 
+
+# メインの処理
 if __name__=="__main__":
     main(sys.argv)
 
+    # 引数の取得
     args = sys.argv
     input_stationdata = list(map(str,args[1:]))
 
+    # ８桁をdate型に変更
     dt = datetime.strptime(input_stationdata[0], "%Y%m%d")
 
-
-
-    # station_name_list = session.query(Transport).all()
-    # for list in station_name_list:
-    #     if list.seq == int(input_stationdata[1]):
-    #         print("error:交通費精算テーブルにデータを登録できませんでした")
-    #         break
-    
-
+    # 想定の処理（すべての要素に値いを代入し登録）
     try:
         transport = Transport(
             date = dt,
@@ -50,6 +47,8 @@ if __name__=="__main__":
         session.add(transport)
         session.commit()
         print("交通費テーブルにデータを登録できました")
+    
+    # データの代入がうまくいかなかったときの処理
     except:
         print("error:交通費精算テーブルにデータを登録できませんでした")
 

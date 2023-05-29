@@ -10,10 +10,13 @@ if number >= 1000:
 
 else: # 素数の判定
     for i in range(number):
-        if number % (i+1) == 0 and 0 != i and number != (i+1): # １と自分以外で割り切れたら       
+        # １と０と自分以外で割り切れたら
+        if number % (i+1) == 0 and 0 != i and number != (i+1):        
             print("not", end="")
             break
-        elif number == i + 1: # for回り終わったら
+
+        # for回り終わったら
+        elif number == i + 1: 
             print("prime", end="")
 
 
