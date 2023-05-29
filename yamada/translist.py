@@ -1,6 +1,6 @@
 import sys
 from database import session
-from transtable import Transport
+from transinsert import Transport
 
 args = sys.argv
 
