@@ -26,6 +26,7 @@ def change(money):
                 print(str(money_type[i]) + "円玉：" + str(money_num[i]) + "枚")
 
 def question(money):
+    '''購入商品orキャンセルの確認'''
     answer = input("何を購入しますか（商品名/cancel）")
     if answer == "cancel":
         change(money)
@@ -79,14 +80,18 @@ def money_check2(money):
         elif Y_or_N == "N":
             change(money)
 
+
+
 #金額リストを作成
 goods_price_list = []
 goods = {"お茶":110, "コーヒー":100, "ソーダ":160, "コーンポタージュ":130}
 
+#商品リストを表示
 goods_display()
 
 #金額投入
 money = int(input("投入金額を入力してください"))
 money_num = list(str(money))
 
+#金額処理
 money_check(money,money_num)
